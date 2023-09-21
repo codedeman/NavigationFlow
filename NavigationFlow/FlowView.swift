@@ -13,23 +13,30 @@ struct FlowView: View {
     @StateObject var vm: FlowVM
 
     var body: some View {
-        NavigationStack(path: $vm.navigationPath) {
-            VStack() {
-                Screen1Phone(vm: vm.makeScreen1PhoneVM())
-            }
-            .navigationDestination(for: Screen.self) {screen in
-                switch screen {
-                case .screen2(vm: let vm):
-                    Screen2Verification(vm: vm)
-                case .screen3(vm: let vm):
-                    Screen3NameEmail(vm: vm)
-                case .screen4(vm: let vm):
-                    Screen4CompanyInfo(vm: vm)
-                case .screen5(vm: let vm):
-                    Screen5Final(vm: vm)
+        NavigationSplitView{
+            Screen1Phone(vm: vm.makeScreen1PhoneVM())
+        } detail: {
+            NavigationStack(path: $vm.navigationPath) {
+                VStack() {
+                    Text("Hello my friend ")
+                    Screen1Phone(vm: vm.makeScreen1PhoneVM())
+                }
+                .navigationDestination(for: Screen.self) {screen in
+                    switch screen {
+                    case .screen2(vm: let vm):
+                        Screen2Verification(vm: vm)
+                    case .screen3(vm: let vm):
+                        Screen3NameEmail(vm: vm)
+                    case .screen4(vm: let vm):
+                        Screen4CompanyInfo(vm: vm)
+                    case .screen5(vm: let vm):
+                        Screen5Final(vm: vm)
+                    }
                 }
             }
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+
         }
-        .textFieldStyle(RoundedBorderTextFieldStyle())
+
     }
 }

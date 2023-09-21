@@ -39,6 +39,6 @@ struct Screen2Verification: View {
             }, label: {
                 Text("Next")
             })
-        }.padding()
+        }
     }
 }

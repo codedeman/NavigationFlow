@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A3184AD2ABB53EC00C4A9D1 /* ItegrationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3184AC2ABB53EC00C4A9D1 /* ItegrationFlow.swift */; };
+		0A3184B02ABC8F7C00C4A9D1 /* AccountLinkingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3184AF2ABC8F7C00C4A9D1 /* AccountLinkingScreen.swift */; };
+		0A3184B22ABC8F9B00C4A9D1 /* AccountLinkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3184B12ABC8F9B00C4A9D1 /* AccountLinkingViewModel.swift */; };
+		0A3184B42ABC94E500C4A9D1 /* IntegrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3184B32ABC94E500C4A9D1 /* IntegrationView.swift */; };
 		BCFB66522819B62100D2B298 /* NavigationFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB66512819B62100D2B298 /* NavigationFlowTests.swift */; };
 		C147F740245FD18100CDB363 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147F73F245FD18100CDB363 /* AppDelegate.swift */; };
 		C147F742245FD18100CDB363 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C147F741245FD18100CDB363 /* SceneDelegate.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A3184AC2ABB53EC00C4A9D1 /* ItegrationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItegrationFlow.swift; sourceTree = "<group>"; };
+		0A3184AF2ABC8F7C00C4A9D1 /* AccountLinkingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLinkingScreen.swift; sourceTree = "<group>"; };
+		0A3184B12ABC8F9B00C4A9D1 /* AccountLinkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLinkingViewModel.swift; sourceTree = "<group>"; };
+		0A3184B32ABC94E500C4A9D1 /* IntegrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationView.swift; sourceTree = "<group>"; };
 		BCFB664F2819B62100D2B298 /* NavigationFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFB66512819B62100D2B298 /* NavigationFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowTests.swift; sourceTree = "<group>"; };
 		C147F73C245FD18100CDB363 /* NavigationFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +81,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A3184AE2ABB564400C4A9D1 /* FlowIntergrationFlow */ = {
+			isa = PBXGroup;
+			children = (
+				0A3184AC2ABB53EC00C4A9D1 /* ItegrationFlow.swift */,
+				0A3184AF2ABC8F7C00C4A9D1 /* AccountLinkingScreen.swift */,
+				0A3184B12ABC8F9B00C4A9D1 /* AccountLinkingViewModel.swift */,
+				0A3184B32ABC94E500C4A9D1 /* IntegrationView.swift */,
+			);
+			path = FlowIntergrationFlow;
+			sourceTree = "<group>";
+		};
 		BCFB66502819B62100D2B298 /* NavigationFlowTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +122,7 @@
 		C147F73E245FD18100CDB363 /* NavigationFlow */ = {
 			isa = PBXGroup;
 			children = (
+				0A3184AE2ABB564400C4A9D1 /* FlowIntergrationFlow */,
 				C147F73F245FD18100CDB363 /* AppDelegate.swift */,
 				C147F741245FD18100CDB363 /* SceneDelegate.swift */,
 				C1FCBCEA248DFC5F005ACA30 /* FlowVM.swift */,
@@ -249,7 +269,9 @@
 			files = (
 				C191F04124A040A800E78D71 /* Screen5Final.swift in Sources */,
 				C191F03924A021B400E78D71 /* Screen2Verification.swift in Sources */,
+				0A3184B02ABC8F7C00C4A9D1 /* AccountLinkingScreen.swift in Sources */,
 				C191F03F24A03D5700E78D71 /* Screen4CompanyInfo.swift in Sources */,
+				0A3184AD2ABB53EC00C4A9D1 /* ItegrationFlow.swift in Sources */,
 				C1FCBCED248DFCA7005ACA30 /* FlowView.swift in Sources */,
 				C147F740245FD18100CDB363 /* AppDelegate.swift in Sources */,
 				C191F03724A01D5600E78D71 /* Screen1Phone.swift in Sources */,
@@ -257,6 +279,8 @@
 				C191F03B24A0277E00E78D71 /* Model.swift in Sources */,
 				C147F742245FD18100CDB363 /* SceneDelegate.swift in Sources */,
 				C1FCBCEB248DFC5F005ACA30 /* FlowVM.swift in Sources */,
+				0A3184B22ABC8F9B00C4A9D1 /* AccountLinkingViewModel.swift in Sources */,
+				0A3184B42ABC94E500C4A9D1 /* IntegrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

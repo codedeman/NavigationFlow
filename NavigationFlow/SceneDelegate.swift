@@ -20,8 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        flowVM = FlowVM()
-        let contentView = FlowView(vm: self.flowVM)
+//        flowVM = FlowVM()
+//        let contentView = FlowView(vm: self.flowVM)
+        let flow = IntegrationFlow()
+        let contentView = IntegrationView(flow: flow)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

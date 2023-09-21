@@ -42,12 +42,21 @@ class FlowVM: ObservableObject {
     var subscription = Set<AnyCancellable>()
     
     @Published var navigationPath: [Screen] = []
-    
-    init() {
+    var step: Screen = .screen2(vm: .init(phoneNumber: ""))
+    var root = PassthroughSubject<String, Never>()
+
+    init(step: Screen) {
+        self.step = step
         self.model = Model()
+        self.startFlow()
     }
 
+    func startFlow() {
+//        root.send(self)
+    }
+    
     func makeScreen1PhoneVM() -> Screen1PhoneVM {
+//        print("executing ==> \(navigationPath.count)")
         let vm = Screen1PhoneVM(phoneNumber: model.phoneNumber)
         vm.didComplete
             .sink(receiveValue: didComplete1)
@@ -94,6 +103,9 @@ class FlowVM: ObservableObject {
         vm.testActionRequested
             .sink(receiveValue: testAction)
             .store(in: &subscription)
+        vm.finishFlow
+            .sink(receiveValue: didCompleted(vm:))
+            .store(in: &subscription)
         return vm
     }
     
@@ -106,9 +118,11 @@ class FlowVM: ObservableObject {
     }
     
     func didComplete1(vm: Screen1PhoneVM) {
+        print("testing ===> \(navigationPath.count)")
         // Additional logic inc. updating model
-        model.phoneNumber = vm.phoneNumber
-        navigationPath.append(.screen2(vm: makeScreen2VerificationVM()))
+//        model.phoneNumber = vm.phoneNumber
+//        navigationPath.append(.screen2(vm: makeScreen2VerificationVM()))
+        root.send(vm.phoneNumber)
     }
     
     func didComplete2(vm: Screen2VerificationVM) {
@@ -162,5 +176,11 @@ class FlowVM: ObservableObject {
         // Switch out navigation.  Model now complete.
         print("Complete")
         print(model)
+    }
+
+    func didCompleted(vm: Screen4WorkInfoVM) {
+        navigationPath.forEach { screen in
+            print("Complete \(screen) ")
+        }
     }
 }

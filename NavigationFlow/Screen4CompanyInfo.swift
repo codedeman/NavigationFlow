@@ -17,6 +17,7 @@ final class Screen4WorkInfoVM: ObservableObject, Completeable, Navigable {
     let goTo2Requested = PassthroughSubject<Screen4WorkInfoVM, Never>()
     let goTo3Requested = PassthroughSubject<Screen4WorkInfoVM, Never>()
     let testActionRequested = PassthroughSubject<Screen4WorkInfoVM, Never>()
+    let finishFlow = PassthroughSubject<Screen4WorkInfoVM, Never>()
 
     init(workEmail: String?) {
         self.workEmail = workEmail ?? ""
@@ -42,6 +43,10 @@ final class Screen4WorkInfoVM: ObservableObject, Completeable, Navigable {
     func testAction() {
         testActionRequested.send(self)
     }
+
+    func completed() {
+        finishFlow.send(self)
+    }
 }
 
 struct Screen4CompanyInfo: View {
@@ -58,6 +63,8 @@ struct Screen4CompanyInfo: View {
             Button(action: { self.vm.didTapGoBack2() }, label: { Text("Go back to 2") })
             Button(action: { self.vm.didTapGoBack3() }, label: { Text("Go back to 3, change name") })
             Button(action: { self.vm.testAction() }, label: { Text("Test") })
-        }.padding()
+            Button(action: { self.vm.completed() }, label: { Text("complete flow") })
+
+        }.padding().foregroundColor(Color.red)
     }
 }

@@ -42,6 +42,7 @@ struct Screen1Phone: View {
             TextField("Phone Number", text: $vm.phoneNumber)
             Button(action: {
                 self.vm.didTapNext()
+//                dismiss()
             }, label: { Text("Next") })
             .disabled(!vm.isValid)
         }.padding()
